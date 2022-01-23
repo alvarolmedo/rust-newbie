@@ -15,17 +15,20 @@ fn main() {
         .trim()
         .parse()
         .expect("Index entered was not a number");
+    if index < a.len() {
+        let element = a[index];
 
-    let element = a[index];
-
-    println!(
-        "The value of the element at index {} is: {}",
-        index, element
-    );
-    my_other_function(element);
-    let element_plus_1 = add_one(element);
-    let element_plus_2 = add_two(element);
-    println!("The next numbers are: {} and {}", element_plus_1, element_plus_2);
+        println!(
+            "The value of the element at index {} is: {}",
+            index, element
+        );
+        my_other_function(element);
+        let element_plus_1 = add_one(element);
+        let element_plus_2 = add_two(element);
+        println!("The next numbers are: {} and {}", element_plus_1, element_plus_2);
+    } else {
+        println!("Index entered ({}) is greater than array length ({})",index, a.len());
+    }
 }
 
 fn my_other_function(number: u32) {
