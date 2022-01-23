@@ -15,6 +15,8 @@ fn main() {
         .trim()
         .parse()
         .expect("Index entered was not a number");
+
+    // If intro a index number print this element and its info
     if index < a.len() {
         let element = a[index];
 
@@ -26,7 +28,12 @@ fn main() {
         let element_plus_1 = add_one(element);
         let element_plus_2 = add_two(element);
         println!("The next numbers are: {} and {}", element_plus_1, element_plus_2);
-    } else {
+    // If intro the same than lenght, print all elements
+    } else if index == a.len() {
+        for element in a {
+            println!("The values is: {}", element);
+        }   
+    } else { 
         println!("Index entered ({}) is greater than array length ({})",index, a.len());
     }
 }
